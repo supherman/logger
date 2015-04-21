@@ -13,17 +13,19 @@ type Logger interface {
 	Errorf(format string, args ...interface{})
 	Fatalf(format string, args ...interface{})
 
+	Print(args ...interface{})
+
 	SetLevel(lvl string)
 }
 
 var log Logger
 
-func Get() Logger {
-	return log
-}
-
 func SetLogger(newLogger Logger) {
 	log = newLogger
+}
+
+func Get() Logger {
+	return log
 }
 
 func SetLevel(lvl string) {
