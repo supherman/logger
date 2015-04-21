@@ -18,6 +18,10 @@ type Logger interface {
 
 var log Logger
 
+func Get() Logger {
+	return log
+}
+
 func SetLogger(newLogger Logger) {
 	log = newLogger
 }
